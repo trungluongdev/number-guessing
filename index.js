@@ -24,9 +24,8 @@ function checkIsCorrect() {
 function makeGuess() {
   if (!secretNumber) {
     generateNumber();
-    console.log(generateNumber());
   }
-  guess = prompt("Make a guess (between 1 and 10):");
+  guess = parseInt(prompt("Make a guess (between 1 and 10):"));
   // MILESTONE 2: ADD CODE HERE to pop up a dialog box
   // asking the user for a number.
   //--------------------------------------------
@@ -37,7 +36,7 @@ guessesRemaining--;
 let result = checkIsCorrect();
 if (result === 0) {
   alert(
-    `Congratulations! You've guessed the number in ${lastGuesses.length} attempts.`
+    `Congratulations! You've guessed the number in ${lastGuess.length} attempts.`
   );
 } else {
   let message = result === -1 ? "Too low!" : "Too high!";
